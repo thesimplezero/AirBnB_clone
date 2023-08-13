@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from base_model import BaseModel
+from models.base_model import BaseModel
 import os
 import sys
 
