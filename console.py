@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 import cmd
+import shlex
+from datetime import datetime
+from models import storage
 
+from models.base_model import BaseModel
+from models.user import User
+from models.city import City
+
+
+classes = {"BaseModel": BaseModel, "User": User, "City": City}
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
