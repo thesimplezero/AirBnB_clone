@@ -5,7 +5,7 @@ to a JSON file and deserializes JSON files to instances.
 """
 import json
 import os
-from models.base_model import BaseModel
+from base_model import BaseModel
 
 
 class FileStorage:
