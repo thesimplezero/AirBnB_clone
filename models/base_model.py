@@ -20,8 +20,9 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == "__class__":
                     continue
-                elif key == "created_at" or key == "updated_at":
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key in ["created_at", "updated_at"]:
+                    setattr(self, key, datetime.strptime
+                            (value, "%Y-%m-%dT%H:%M:%S.%f"))
                 else:
                     setattr(self, key, value)
         else:
@@ -34,7 +35,7 @@ class BaseModel:
         Sets the print behavior of the base model
         """
         class_name = self.__class__.__name__
-        return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
+        return f"[{class_name}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """
