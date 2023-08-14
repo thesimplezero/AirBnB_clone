@@ -40,7 +40,6 @@ class Test_User(unittest.TestCase):
         """tests if an instance is created the right way"""
         self.assertIsInstance(self.user, User)
 
-
     def test_init_without_arguments(self):
         """Test initialization without arguments"""
         self.user = User()
