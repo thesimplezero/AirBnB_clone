@@ -6,7 +6,7 @@ import unittest
 import json
 import os
 from base_model import BaseModel
-from models.engine.file_storage import FileStorage
+from file_storage import FileStorage
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
