@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
+
 import os
 import sys
+import cmd
+from datetime import datetime
+from shlex import shlex
+from models.engine import storage
+from models.base_model import BaseModel
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.user import User
+import models
 
 # Get the current directory of the script
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -9,25 +22,12 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
-import cmd
-import models
-from datetime import datetime
-from shlex import shlex
+classes = {
+    'BaseModel': BaseModel, 'State': State, 'City': City,
+    'Amenity': Amenity, 'Place': Place, 'Review': Review,
+    'User': User
+}
 
-from models.engine import storage
-from base_model import BaseModel
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
-from models.user import User
-
-
-
-classes = {'BaseModel': BaseModel, 'State': State, 'City': City,
-               'Amenity': Amenity, 'Place': Place, 'Review': Review,
-               'User': User}
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
@@ -113,6 +113,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 del models.storage.all()[k]
                 models.storage.save()
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
