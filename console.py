@@ -68,51 +68,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print([str(v) for k, v in instances.items() if k.startswith(arg)])
 
-    def do_show(self, arg):
-        """Show instance based on id"""
-        classname, objid = None, None
-        args = arg.split(' ')
-        if len(args) > 0:
-            classname = args[0]
-        if len(args) > 1:
-            objid = args[1]
-        if not classname:
-            print('** class name missing **')
-        elif not objid:
-            print('** instance id missing **')
-        elif not self.classes.get(classname):
-            print("** class doesn't exist **")
-        else:
-            k = classname + "." + objid
-            obj = models.storage.all().get(k)
-            if not obj:
-                print('** no instance found **')
-            else:
-                print(obj)
 
-    def do_destroy(self, arg):
-        """destroy instance based on id
-        """
-        classname, objid = None, None
-        args = arg.split(' ')
-        if len(args) > 0:
-            classname = args[0]
-        if len(args) > 1:
-            objid = args[1]
-        if not classname:
-            print('** class name missing **')
-        elif not objid:
-            print('** instance id missing **')
-        elif not self.classes.get(classname):
-            print("** class doesn't exist **")
-        else:
-            k = classname + "." + objid
-            obj = models.storage.all().get(k)
-            if not obj:
-                print('** no instance found **')
-            else:
-                del models.storage.all()[k]
-                models.storage.save()
 
 
 if __name__ == "__main__":
