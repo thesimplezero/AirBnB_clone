@@ -19,27 +19,3 @@ The project is broken down into the following stages:
 
 The first step is to add inline styling to the HTML files. This is done by adding the following code to the `<head>` of each HTML file:
 
-```html
-<style>
-body {
-  background-color: #f2
-  
-}
-</style>
-```
-
-This will add a light gray background to the page.
-
-## 1. Head Styling
-
-The next step is to add some basic styling to the `<head>` of each HTML file. This is done by adding the following code to  the `<head>` of each HTML file:
-
-```html
-<style>
-body {
-  background-color: #f2;
-}
-
-h1 {
-  text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Cal
