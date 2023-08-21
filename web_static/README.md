@@ -14,8 +14,3 @@ The project is broken down into the following stages:
 7. Display Results
 8. More Details
 
-
-## 0. Inline Styling
-
-The first step is to add inline styling to the HTML files. This is done by adding the following code to the `<head>` of each HTML file:
-
